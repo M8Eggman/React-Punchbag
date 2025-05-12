@@ -3,9 +3,14 @@ import "./App.css";
 import Bouton from "./components/bouton/Bouton";
 import Pv from "./components/pdv/Pv";
 import PunchingBag from "./components/punchingBag/punchingBag";
+import punchSrc from "./assets/sound/punch.mp3";
+import superPunchSrc from "./assets/sound/superPunch.mp3";
 
 function App() {
   function punch(e, superPunch) {
+    // crée un const pour chaque son
+    const punchSound = new Audio(punchSrc);
+    const superPunchSound = new Audio(superPunchSrc);
     // réduit les pv de 10% et si pv 0 les reset
     if (pv > 0) {
       // si superpunch vrai fait 20% de dégat
@@ -34,6 +39,10 @@ function App() {
         e.target.parentElement.previousElementSibling.firstElementChild.style.animation = "animationBag 500ms ease-in-out";
       }, 5);
     }
+    // selon le booléen super punch choisi le son adéquoi
+    const sound = superPunch ? superPunchSound : punchSound;
+    sound.currentTime = 0;
+    sound.play();
   }
 
   const [pv, setPv] = useState(100);
