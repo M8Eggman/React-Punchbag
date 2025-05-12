@@ -5,11 +5,12 @@ function Bouton(props) {
   return (
     <>
       <div className="bouton">
-        {props.pv <= 0 ? (
+        {props.pv == 0 ? (
           <button className="boutonRestart" onClick={() => props.punch(false)}>
             Restart
           </button>
-        ) : props.rand == 0 ? (
+        ) : // si rand = 0 super punch
+        props.rand == 0 ? (
           <button className="boutonSuperPunch" onClick={() => props.punch(true)}>
             Super Punch
           </button>

@@ -8,6 +8,7 @@ function App() {
   function punch(superPunch) {
     // réduit les pv de 10% et si pv 0 les reset
     if (pv > 0) {
+      // si superpunch vrai fait 20% de dégat
       superPunch ? setPv(pv - 20) : setPv(pv - 10);
     } else {
       setPv(100);
