@@ -5,7 +5,7 @@ import Pv from "./components/pdv/Pv";
 import PunchingBag from "./components/punchingBag/punchingBag";
 
 function App() {
-  function punch(superPunch) {
+  function punch(e, superPunch) {
     // réduit les pv de 10% et si pv 0 les reset
     if (pv > 0) {
       // si superpunch vrai fait 20% de dégat
@@ -17,8 +17,23 @@ function App() {
     if (pv < 0) {
       setPv(0);
     }
-    // regénère un autre nombre
+    // génère un nouveau nombre
     setRand(Math.floor(Math.random() * 10));
+
+    if (e.target.tagName == "IMG" && pv != 0) {
+      // ajoute et enleve l'animation pour forcer l'animation a se lancer a chaque fois
+      e.target.style.animation = "";
+      setTimeout(() => {
+        e.target.style.animation = "animationBag 500ms ease-in-out";
+      }, 5);
+    } else if (e.target.tagName == "BUTTON" && pv != 0) {
+      // a partir du bouton retrace le chemin pour trouver l'image utilise du dom pas opti
+      console.log(e.target);
+      e.target.parentElement.previousElementSibling.firstElementChild.style.animation = "";
+      setTimeout(() => {
+        e.target.parentElement.previousElementSibling.firstElementChild.style.animation = "animationBag 500ms ease-in-out";
+      }, 5);
+    }
   }
 
   const [pv, setPv] = useState(100);
