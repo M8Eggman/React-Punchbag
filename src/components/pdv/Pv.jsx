@@ -1,12 +1,11 @@
-import { useState } from "react";
 import "./Pv.css";
 
-function Pv() {
-  const [pv, setPv] = useState(0);
+function Pv(props) {
   return (
     <>
       <div className="pvMax">
-        <div className="pvActuel" style={{ width: pv + "vw" }}></div>
+        {/* selon les pv va changer la largeur de la div */}
+        <div className="pvActuel" style={{ width: props.pv / 2 + "vw" }}></div>
       </div>
     </>
   );

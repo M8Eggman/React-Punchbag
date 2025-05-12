@@ -1,0 +1,21 @@
+.bouton button {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+  border: 3px solid #23272e;
+  font-size: 20px;
+  font-weight: 600;
+  color: #23272e;
+  cursor: pointer;
+}
+.bouton .boutonPunch {
+  background-color: #d30026;
+}
+.bouton .boutonSuperPunch {
+  background-color: #d30026;
+  color: gold;
+  border: 3px solid gold;
+}
+.bouton .boutonRestart {
+  background-color: yellow;
+}

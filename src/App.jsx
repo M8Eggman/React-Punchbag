@@ -1,14 +1,34 @@
+import { useState } from "react";
 import "./App.css";
 import Bouton from "./components/bouton/Bouton";
 import Pv from "./components/pdv/Pv";
 import PunchingBag from "./components/punchingBag/punchingBag";
 
 function App() {
+  function punch(superPunch) {
+    // réduit les pv de 10% et si pv 0 les reset
+    if (pv > 0) {
+      superPunch ? setPv(pv - 20) : setPv(pv - 10);
+    } else {
+      setPv(100);
+    }
+    // si pv inférieur a 0 le set a 0
+    if (pv < 0) {
+      setPv(0);
+    }
+    // regénère un autre nombre
+    setRand(Math.floor(Math.random() * 10));
+  }
+
+  const [pv, setPv] = useState(100);
+  // génère un nombre aléatoire pour le superpunch
+  const [rand, setRand] = useState(Math.floor(Math.random() * 10));
+
   return (
     <>
-      <Pv />
-      <PunchingBag />
-      <Bouton />
+      <Pv pv={pv} />
+      <PunchingBag punch={punch} pv={pv} rand={rand} />
+      <Bouton punch={punch} pv={pv} rand={rand} />
     </>
   );
 }

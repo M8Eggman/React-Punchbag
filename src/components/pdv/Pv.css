@@ -3,12 +3,11 @@
   height: 50px;
   background-color: #23272e;
   position: relative;
-  border-radius: 25px;
   margin-top: 50px;
   border: 2px #23272e solid;
 }
 .pvMax .pvActuel {
   height: 100%;
   background-color: yellow;
-  border-radius: 25px;
+  transition: 200ms;
 }
