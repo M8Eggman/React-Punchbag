@@ -1,1 +1,15 @@
-
+.pvMax {
+  width: 50vw;
+  height: 50px;
+  background-color: #23272e;
+  position: relative;
+  border-radius: 25px;
+  margin-top: 50px;
+  border: 2px #23272e solid;
+}
+.pvMax .pvActuel {
+  width: 25vw;
+  height: 100%;
+  background-color: yellow;
+  border-radius: 25px;
+}

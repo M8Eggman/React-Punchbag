@@ -5,7 +5,6 @@ function Pv() {
     <>
       <div className="pvMax">
         <div className="pvActuel"></div>
-        <p>100 PV</p>
       </div>
     </>
   );
