@@ -33,7 +33,6 @@ function App() {
       }, 5);
     } else if (e.target.tagName == "BUTTON" && pv != 0) {
       // a partir du bouton retrace le chemin pour trouver l'image utilise du dom pas opti
-      console.log(e.target);
       e.target.parentElement.previousElementSibling.firstElementChild.style.animation = "";
       setTimeout(() => {
         e.target.parentElement.previousElementSibling.firstElementChild.style.animation = "animationBag 500ms ease-in-out";
