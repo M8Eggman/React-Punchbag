@@ -1,7 +1,7 @@
 {
   "name": "punch_bag",
-  "homepage": "https://M8Eggman.github.io/React-Punchbag/",
-  "private": true,
+  "homepage": "https://m8eggman.github.io/React-Punchbag/",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
