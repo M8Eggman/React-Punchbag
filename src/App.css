@@ -3,6 +3,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url("./assets/img/il_1588xN.6101964099_nk8i.avif");
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 #root {
   display: flex;
